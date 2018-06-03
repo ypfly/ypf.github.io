@@ -138,24 +138,26 @@
 
     </div>
     <script>   
-        var topvalue=100; 
+        var topvalue=110; 
         var tmd = 0;
         var t=setInterval(function(){
             var heanderobj=document.getElementById("heanderdiv");
-            topvalue+=20;
+            topvalue+=3;
            
             if(topvalue>=125){
                 clearInterval(t);
             }
-            if(topvalue>=10){
-                heanderobj.style.opacity= (tmd+3)/10;
+            if(topvalue>113){
+                heanderobj.style.opacity= (tmd++)/10;
+                console.log((tmd++)/10);
             }
-            if(topvalue>=125){
+           
+            if(topvalue>=122){
                 heanderobj.style.opacity= 1;
             }
             heanderobj.style.top=topvalue+"px";
            
-        },200)
+        },130)
     </script>
 </body>
 
