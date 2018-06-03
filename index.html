@@ -12,18 +12,21 @@
             margin: 0px;
             padding: 0px;
         }
-        .wrapper-mormal{
+
+        .wrapper-mormal {
             width: 560px;
-            margin: 125px auto;
+            margin: 0 auto;
             text-align: center;
         }
 
-        /* .heander {
-            width: 330px; */
-            /* height: 398px; */
-            /* background-color: pink;
+        .heander {
            
-        } */
+           position: relative;
+           opacity:0;
+            /* height: 685px;
+            background-color: pink;
+            */
+        } 
 
         .imgdiv {
             width: 150px;
@@ -58,19 +61,23 @@
             /* height: 10px; */
             /* background-color: #aaa; */
             display: inline-block;
-            
+
             margin-bottom: 50px;
 
         }
 
         .wrapper-mormal>.nav {
             width: 900;
-           
+            position: relative;
+            top: 120px;
             /* float: none; */
         }
-        .wrapper-mormal>.nav li{
-            list-style-type:none;
+
+        .wrapper-mormal>.nav li {
+            list-style-type: none;
+           
         }
+
         .wrapper-mormal>.nav a {
             color: indigo;
             text-decoration: none;
@@ -80,30 +87,30 @@
             /* line-height: 100px; */
             border-radius: 4%;
             margin: 0 20px;
-            font-weight:150;
-          
+            font-weight: 150;
+
         }
-        .wrapper-mormal>.nav a:hover{
-            color:rgb(38, 14, 48);
+
+        .wrapper-mormal>.nav a:hover {
+            color: rgb(38, 14, 48);
         }
-        .wrapper-mormal>.footer{
-            margin: 40px 0 0 ;
-            padding: 40px 0 ;
+
+        .nav>.footer {
+            margin: 40px 0 0;
+            padding: 40px 0;
             border-top: 1px solid #ededed;
             font-size: 10px;
-            color:#aaa;
+            color: #aaa;
             position: relative;
             text-align: center;
             font-weight: 200;
         }
-     
-        
     </style>
 </head>
 
 <body>
     <div class="wrapper-mormal">
-        <div class="heander">
+        <div class="heander" id="heanderdiv">
 
             <div class="imgdiv">
                 <img class="img" src="images/profile.jpeg" width="150" ,height='150'>
@@ -113,21 +120,43 @@
             <a class="mail" href="mailto:ypfly@live.cn">
                 <img src="images/mail.png" alt="" width="25" , height="20">
             </a>
-            
+
         </div>
         <div class="nav">
-                <ul>
-                    <li>                       
-                        <a href="#">胡言乱语</a>
-                        <a href="#">行万里路</a>
-                        <a href="about.html">关于我</a>
-                    </li>
-                </ul>
+            <ul>
+                <li>
+                    <a href="#">胡言乱语</a>
+                    <a href="#">行万里路</a>
+                    <a href="about.html">关于我</a>
+                </li>
+            </ul>
+
+            <div class="footer">
+                oliver © 2018
             </div>
-        <div class="footer">
-            oliver © 2018
         </div>
+
     </div>
+    <script>   
+        var topvalue=100; 
+        var tmd = 0;
+        var t=setInterval(function(){
+            var heanderobj=document.getElementById("heanderdiv");
+            topvalue+=20;
+           
+            if(topvalue>=125){
+                clearInterval(t);
+            }
+            if(topvalue>=10){
+                heanderobj.style.opacity= (tmd+3)/10;
+            }
+            if(topvalue>=125){
+                heanderobj.style.opacity= 1;
+            }
+            heanderobj.style.top=topvalue+"px";
+           
+        },200)
+    </script>
 </body>
 
 </html>
